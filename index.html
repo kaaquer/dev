@@ -53,12 +53,12 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
         
-        [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
-            color: var(--dark-color);
+        [data-theme="dark"] .navbar-scrolled .navbar-nav .nav-link {
+            color: #f8fafc;
         }
         
-        [data-theme="dark"] .navbar-light .navbar-brand {
-            color: var(--dark-color);
+        [data-theme="dark"] .navbar-scrolled .navbar-brand {
+            color: #f8fafc;
         }
         
         [data-theme="dark"] .modal-content {
@@ -849,6 +849,61 @@
 
         [data-theme="dark"] .text-muted {
             color: #94a3b8 !important;
+        }
+
+        /* Update these styles for better dark mode on mobile */
+        [data-theme="dark"] .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-theme="dark"] .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* Desktop navbar should be transparent at the top in dark mode */
+        @media (min-width: 768px) {
+            [data-theme="dark"] .navbar:not(.navbar-scrolled) {
+                background-color: transparent;
+            }
+            
+            [data-theme="dark"] .navbar:not(.navbar-scrolled) .navbar-nav .nav-link {
+                color: #f8fafc;
+            }
+            
+            [data-theme="dark"] .navbar:not(.navbar-scrolled) .navbar-brand {
+                color: #f8fafc;
+            }
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 767px) {
+            [data-theme="dark"] .navbar-collapse {
+                background-color: #1e293b;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            [data-theme="dark"] .navbar-collapse .nav-link {
+                color: #f8fafc !important;
+            }
+            
+            [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+                color: #f8fafc;
+            }
+            
+            [data-theme="dark"] .navbar-light .navbar-brand {
+                color: #f8fafc;
+            }
+            
+            [data-theme="dark"] .navbar-collapse .nav-link::after {
+                background-color: #38bdf8;
+            }
+            
+            /* Ensure the navbar itself remains transparent when not scrolled in dark mode */
+            [data-theme="dark"] .navbar:not(.navbar-scrolled) {
+                background-color: transparent;
+            }
         }
     </style>
 </head>
